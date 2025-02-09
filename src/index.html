@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Chaitanya Animuthayalu</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            padding: 25px;
+            background-color: white;
+            color: rgba(0, 0, 0, 0.781);
+            font-size: 25px;
+            padding-top: 120px;
+            padding-bottom: 100px;
+            margin: 0;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .navbar {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+         /* Instagram Button Styles */
+         .btn-instagram {
+            background: linear-gradient(45deg, #E4405F, #F77737);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 12px 30px;
+            font-size: 18px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .btn-instagram:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Copy Link Button Styles */
+        .btn-copy {
+            background: linear-gradient(45deg, #2196F3, #03A9F4);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 15px 40px;
+            font-size: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            margin: 20px auto;
+            display: block;
+            width: fit-content;
+        }
+
+        .btn-copy:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .share-section {
+            margin-top: 50px;
+            text-align: center;
+            padding: 30px 0;
+            border-radius: 15px;
+            background: rgba(240, 240, 240, 0.5);
+            position: fixed;
+            bottom: 70px;
+            width: 80%;
+            left: 10%;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background-color: #1f1f1f;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        footer p {
+            margin: 0;
+            color: #9C9AB3;
+            font-size: 14px;
+        }
+
+        .navbar-brand img {
+            transition: transform 0.3s ease;
+        }
+
+        .navbar-brand img:hover {
+            transform: scale(1.1);
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #FF0000;
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        @media (max-width: 991px) {
+            .navbar-nav {
+                width: 100%;
+                text-align: center;
+                background: white;
+                border-radius: 15px;
+                margin-top: 10px;
+                display: flex;
+                flex-direction: column;
+            }
+            .nav-link {
+                padding: 12px 20px !important;
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            body {
+                padding-top: 80px;
+                font-size: 18px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+            h2 {
+                font-size: 18px;
+            }
+            .share-section {
+                font-size: 14px;
+                bottom: 60px;
+                width: 90%;
+                left: 5%;
+            }
+            footer p {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="logo.png" alt="Logo" width="100" height="100" />
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ml-auto align-items-center">
+                    <a class="nav-link px-4" href="./index.html">Home</a>
+                    <a class="nav-link px-4" href="./important.html">Important Questions</a>
+                    <a class="nav-link px-4" href="./Resources.html"> Neet & Jee mains Resources</a>
+                    <a class="nav-link px-4" href="./praticals.html">Practical Materials</a>
+                    <a class="nav-link px-4" href="./Termsandconditions.html">Terms and Conditions</a>
+                    
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>Hey!! Everyone, 😄</h1>
+        <h2>In this website we are providing Important Questions for Grade 11th & 12th Students.</h2>
+    </div>
+
+  <!-- Share Section -->
+<div class="share-section" style="text-align: center;">
+    <p style="margin-bottom: 25px; font-size: 22px;">Share these links with your friends:</p>
+    <p id="text-to-copy" style="font-size: 18px; color: #666; margin-bottom: 10px;">
+        https://shrxvxnxd.github.io/Animuthyalu/website/index.html
+    </p>
+    <button class="btn-copy" onclick="copyToClipboard()">
+        <i class="fas fa-copy"></i> Copy Link
+    </button>
+    
+    <!-- Instagram Button Adjusted Below Copy Link Button -->
+    <button class="btn btn-instagram" style="margin-top: 10px;" onclick="window.open('https://www.instagram.com/sri_chaitanya_animuthyalu/', '_blank')">
+        <i class="fab fa-instagram"></i> Follow Us on Instagram
+    </button>
+</div>
+
+
+
+ 
+    <!-- Footer -->
+    <footer>
+        <p>Made With ❤️ by Sri Chaitanya Animuthayalu</p>
+    </footer>
+
+   
+
+    <!-- Bootstrap JS and Dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <script>
+        // Copy to Clipboard Functionality
+        function copyToClipboard() {
+            const text = document.getElementById("text-to-copy").innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                alert("Copied to clipboard: " + text);
+            }).catch(err => {
+                console.error("Failed to copy: ", err);
+            });
+        }
+        
+    </script>
+</body>
+</html>

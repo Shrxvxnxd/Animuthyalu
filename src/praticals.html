@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Intermediate Practical Resources</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css">
+    
+    <style>
+        /* Existing styles from original code */
+        body {
+            padding: 25px;
+            background-color: white;
+            color: rgba(0, 0, 0, 0.781);
+            font-size: 25px;
+            padding-top: 120px;
+            padding-bottom: 100px;
+            margin: 0;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .navbar {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            margin-top: 50px;
+            text-align: center;
+        }
+        /* General Styles */
+        body {
+            padding: 25px;
+            background-color: white;
+            color: rgba(0, 0, 0, 0.781);
+            font-size: 25px;
+            padding-top: 120px;
+            padding-bottom: 100px; /* Added for footer space */
+            margin: 0;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .navbar {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            margin-top: 50px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Download Button Styles */
+        .btn-download {
+            background: linear-gradient(45deg, #4CAF50, #81C784);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 12px 30px;
+            font-size: 18px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            margin: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-download:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-download i {
+            margin-right: 10px;
+        }
+
+        /* Instagram Button Styles */
+        .btn-instagram {
+            background: linear-gradient(45deg, #E4405F, #F77737);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 12px 30px;
+            font-size: 18px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .btn-instagram:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Copy Link Button Styles */
+        .btn-copy {
+            background: linear-gradient(45deg, #2196F3, #03A9F4);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 15px 40px;
+            font-size: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            margin: 20px auto;
+            display: block;
+            width: fit-content;
+        }
+
+        .btn-copy::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                120deg,
+                transparent,
+                rgba(255, 255, 255, 0.3),
+                transparent
+            );
+            transition: 0.5s;
+        }
+
+        .btn-copy:hover::before {
+            left: 100%;
+        }
+
+        .btn-copy:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-copy i {
+            margin-right: 10px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        /* Share Section Styles */
+        .share-section {
+            margin-top: 50px;
+            text-align: center;
+            padding: 30px 0;
+            border-radius: 15px;
+            background: rgba(240, 240, 240, 0.5);
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background-color: #1f1f1f;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        footer p {
+            margin: 0;
+            color: #9C9AB3;
+            font-size: 14px;
+        }
+
+        .navbar-brand img {
+            transition: transform 0.3s ease;
+        }
+
+        .navbar-brand img:hover {
+            transform: scale(1.1);
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #FF0000;
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            color: #FF0000 !important;
+        }
+
+        .download-buttons {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        /* Categories Section Styles */
+        .categories-container {
+            margin: 40px 0;
+            width: 100%;
+        }
+
+        .category-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 2px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .category-title {
+            font-size: 28px;
+            margin-bottom: 25px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        @media (max-width: 768px) {
+            .category-title {
+                font-size: 22px;
+            }
+            .category-card {
+                padding: 15px;
+                margin: 20px 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            body {
+                padding-top: 80px;
+                font-size: 18px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+            h2 {
+                font-size: 18px;
+            }
+            .btn {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+            .share-section {
+                font-size: 14px;
+            }
+            footer p {
+                font-size: 12px;
+            }
+        }
+        /* Subject Section Styles */
+        .subject-section {
+            margin: 40px 0;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 2px solid rgba(0, 0, 0, 0.1);
+        }
+
+         /* Share Section Styles */
+         .share-section {
+            margin-top: 50px;
+            text-align: center;
+            padding: 30px 0;
+            border-radius: 15px;
+            background: rgba(240, 240, 240, 0.5);
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background-color: #1f1f1f;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        footer p {
+            margin: 0;
+            color: #9C9AB3;
+            font-size: 14px;
+        }
+
+        .subject-section h3 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        /* Updated Button Styles */
+        .btn-resource {
+            background: linear-gradient(45deg, #2196F3, #03A9F4);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 12px 25px;
+            font-size: 18px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            margin: 8px;
+            min-width: 250px;
+        }
+
+        .btn-resource:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Color Variations */
+        .mpc-btn { background: linear-gradient(45deg, #2c3e50, #3498db); }
+        .bipc-btn { background: linear-gradient(45deg, #27ae60, #2ecc71); }
+        .cec-btn { background: linear-gradient(45deg, #e74c3c, #e67e22); }
+        .disabled-btn { 
+            background: linear-gradient(45deg, #95a5a6, #7f8c8d);
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+
+        /* Updated Button Group */
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        /* Previous Papers Section */
+        .coming-soon {
+            font-size: 22px;
+            color: #95a5a6;
+            font-style: italic;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .subject-section h3 {
+                font-size: 22px;
+            }
+            .btn-resource {
+                font-size: 16px;
+                min-width: 200px;
+                padding: 10px 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            body {
+                padding-top: 80px;
+                font-size: 18px;
+            }
+            .btn-resource {
+                width: 100%;
+                min-width: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar (Same as original) -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./index.html">
+                <img src="logo.png" alt="Logo" width="100" height="100">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ml-auto align-items-center">
+                    <a class="nav-link px-4" href="./index.html">Home</a>
+                    <a class="nav-link px-4" href="./important.html">Important Questions</a>
+                    <a class="nav-link px-4" href="./Resources.html"> Neet & Jee mains Resources</a>
+                    <a class="nav-link px-4" href="./practicals.html">Practical Materials</a>
+                    <a class="nav-link px-4" href="./Termsandconditions.html">Terms and Conditions</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        
+        <!-- Physics and chemistry -->
+        <div class="subject-section">
+            <h3 class="text-center">Physics & Chemistry materials</h3>
+            <div class="button-group">
+                <button class="btn-resource disabled-btn" disabled>Coming Soon</button>
+            </div>
+        </div>
+
+        <!-- Previous Papers Section -->
+        <div class="subject-section">
+            <h3 class="text-center">Biology & Zoology Materials</h3>
+            <div class="button-group">
+                <button class="btn-resource disabled-btn" disabled>Coming Soon</button>
+            </div>
+        </div>
+    </div>
+
+     <!-- Share Section -->
+<div class="share-section" style="text-align: center;">
+    <p style="margin-bottom: 25px; font-size: 22px;">Share these links with your friends:</p>
+    <p id="text-to-copy" style="font-size: 18px; color: #666; margin-bottom: 10px;">
+        https://shrxvxnxd.github.io/Animuthyalu/website/index.html
+    </p>
+    <button class="btn-copy" onclick="copyToClipboard()">
+        <i class="fas fa-copy"></i> Copy Link
+    </button>
+    
+    <!-- Instagram Button Adjusted Below Copy Link Button -->
+    <button class="btn btn-instagram" style="margin-top: 10px;" onclick="window.open('https://www.instagram.com/sri_chaitanya_animuthyalu/', '_blank')">
+        <i class="fab fa-instagram"></i> Follow Us on Instagram
+    </button>
+</div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Made With ❤️ by Sri Chaitanya Animuthayalu</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Copy to Clipboard Functionality
+        function copyToClipboard() {
+            const text = document.getElementById("text-to-copy").innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                alert("Copied to clipboard: " + text);
+            }).catch(err => {
+                console.error("Failed to copy: ", err);
+            });
+        }
+        
+    </script>
+    
+</body>
+</html>
