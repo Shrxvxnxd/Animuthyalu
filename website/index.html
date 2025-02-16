@@ -29,8 +29,8 @@
             text-align: center;
         }
 
-         /* Instagram Button Styles */
-         .btn-instagram {
+        /* Instagram Button Styles */
+        .btn-instagram {
             background: linear-gradient(45deg, #E4405F, #F77737);
             color: white;
             border: none;
@@ -128,6 +128,44 @@
             width: 100%;
         }
 
+        /* Special Entrance Exam Button Styles */
+        .btn-entrance-exam {
+            background: linear-gradient(45deg, #6a11cb, #2575fc);
+            color: white !important;
+            border-radius: 30px;
+            margin: 0 10px;
+            padding: 8px 25px !important;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-entrance-exam::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                120deg,
+                transparent,
+                rgba(255, 255, 255, 0.3),
+                transparent
+            );
+            transition: 0.5s;
+        }
+
+        .btn-entrance-exam:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-entrance-exam:hover::before {
+            left: 100%;
+        }
+
         @media (max-width: 991px) {
             .navbar-nav {
                 width: 100%;
@@ -141,6 +179,11 @@
             .nav-link {
                 padding: 12px 20px !important;
                 font-size: 18px;
+            }
+            .btn-entrance-exam {
+                margin: 10px auto;
+                width: 80%;
+                text-align: center;
             }
         }
 
@@ -182,15 +225,16 @@
                 <div class="navbar-nav ml-auto align-items-center">
                     <a class="nav-link px-4" href="./index.html">Home</a>
                     <a class="nav-link px-4" href="./important.html">Important Questions</a>
-                    <a class="nav-link px-4" href="./Resources.html"> Neet & Jee mains Resources</a>
+                    <a class="nav-link px-4" href="./Resources.html">Neet & Jee Resources</a>
                     <a class="nav-link px-4" href="./praticals.html">Practical Materials</a>
+                    <!-- Special Entrance Exam Button -->
+                    <a class="nav-link px-4 btn-entrance-exam" href="./Entranceexams.html"> Entrance Exams list 2025 🚀
+                    </a>
                     <a class="nav-link px-4" href="./Termsandconditions.html">Terms and Conditions</a>
-                    
                 </div>
             </div>
         </div>
     </nav>
-
 
     <!-- Main Content -->
     <div class="container">
@@ -198,31 +242,26 @@
         <h2>In this website we are providing Important Questions for Grade 11th & 12th Students.</h2>
     </div>
 
-  <!-- Share Section -->
-<div class="share-section" style="text-align: center;">
-    <p style="margin-bottom: 25px; font-size: 22px;">Share these links with your friends:</p>
-    <p id="text-to-copy" style="font-size: 18px; color: #666; margin-bottom: 10px;">
-        https://shrxvxnxd.github.io/Animuthyalu/website/index.html
-    </p>
-    <button class="btn-copy" onclick="copyToClipboard()">
-        <i class="fas fa-copy"></i> Copy Link
-    </button>
-    
-    <!-- Instagram Button Adjusted Below Copy Link Button -->
-    <button class="btn btn-instagram" style="margin-top: 10px;" onclick="window.open('https://www.instagram.com/sri_chaitanya_animuthyalu/', '_blank')">
-        <i class="fab fa-instagram"></i> Follow Us on Instagram
-    </button>
-</div>
+    <!-- Share Section -->
+    <div class="share-section" style="text-align: center;">
+        <p style="margin-bottom: 25px; font-size: 22px;">Share these links with your friends:</p>
+        <p id="text-to-copy" style="font-size: 18px; color: #666; margin-bottom: 10px;">
+            https://shrxvxnxd.github.io/Animuthyalu/website/index.html
+        </p>
+        <button class="btn-copy" onclick="copyToClipboard()">
+            <i class="fas fa-copy"></i> Copy Link
+        </button>
+        
+        <!-- Instagram Button Adjusted Below Copy Link Button -->
+        <button class="btn btn-instagram" style="margin-top: 10px;" onclick="window.open('https://www.instagram.com/sri_chaitanya_animuthyalu/', '_blank')">
+            <i class="fab fa-instagram"></i> Follow Us on Instagram
+        </button>
+    </div>
 
-
-
- 
     <!-- Footer -->
     <footer>
         <p>Made With ❤️ by Sri Chaitanya Animuthayalu</p>
     </footer>
-
-   
 
     <!-- Bootstrap JS and Dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -242,7 +281,6 @@
                 console.error("Failed to copy: ", err);
             });
         }
-        
     </script>
 </body>
 </html>
