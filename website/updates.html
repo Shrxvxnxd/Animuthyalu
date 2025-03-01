@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+        }
+
+        body {
+            padding-top: 120px;
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Navigation Bar Styles */
+        .navbar {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand img {
+            transition: transform 0.3s ease;
+        }
+
+        .navbar-brand img:hover {
+            transform: scale(1.1);
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+            font-weight: 500;
+            color: var(--primary-color) !important;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .btn-entrance-exam {
+            background: linear-gradient(45deg, var(--secondary-color), #2980b9);
+            color: white !important;
+            border-radius: 25px;
+            padding: 8px 25px !important;
+            margin-left: 15px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--secondary-color);
+        }
+
+        .btn-entrance-exam:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        /* Main Content Styles */
+        .updates-main-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .page-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+            font-weight: 800;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .updates-list {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+
+        .update-item {
+            padding: 25px;
+            margin: 20px 0;
+            border-left: 4px solid var(--secondary-color);
+            background: #fff;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .update-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .update-date {
+            color: var(--accent-color);
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .update-date i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .update-content {
+            color: var(--primary-color);
+            line-height: 1.7;
+            font-size: 1.1rem;
+            margin-left: 30px;
+        }
+
+        .action-button {
+            display: inline-flex;
+            align-items: center;
+            background: var(--secondary-color);
+            color: white!important;
+            padding: 8px 20px;
+            border-radius: 6px;
+            margin-left: 15px;
+            text-decoration: none!important;
+            transition: all 0.3s ease;
+        }
+
+        .action-button i {
+            margin-right: 8px;
+        }
+
+        .action-button:hover {
+            background: #2980b9;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .back-to-home {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+            padding: 12px 35px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 80px;
+            }
+            
+            .page-title {
+                font-size: 2rem;
+            }
+            
+            .update-content {
+                margin-left: 15px;
+                font-size: 1rem;
+            }
+            
+            .action-button {
+                margin-left: 0;
+                margin-top: 10px;
+                display: inline-block;
+            }
+            
+            .btn-entrance-exam {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="logo.png" alt="Logo" width="100" height="100">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ml-auto align-items-center">
+                    <a class="nav-link px-4" href="./index.html">Home</a>
+                    <a class="nav-link px-4" href="./important.html">Important Questions</a>
+                    <a class="nav-link px-4" href="./Resources.html">Neet & Jee Resources</a>
+                    <a class="nav-link px-4" href="./praticals.html">Practical Materials</a>
+                    <a class="nav-link px-4 btn-entrance-exam" href="./Entranceexams.html">Entrance Exams 2025 🚀</a>
+                    <a class="nav-link px-4" href="./Termsandconditions.html">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="updates-main-container">
+        <h1 class="page-title">Latest Updates & Announcements 📚</h1>
+        
+        <div class="updates-list">
+            <div class="updates-list">
+                <div class="update-item">
+                    <div class="update-date">
+                        <i class="fas fa-calendar-alt"></i> January 12, 2025
+                    </div>
+                    <div class="update-content">
+                        <strong>New NEET Biology Questions:</strong> Added important questions for Class XII students covering Genetics and Evolution chapters.
+                    </div>
+                </div>
+    
+                <div class="update-item">
+                    <div class="update-date">
+                        <i class="fas fa-calendar-alt"></i> January 26, 2025
+                    </div>
+                    <div class="update-content">
+                        <strong>Physics Practical Update:</strong> Comprehensive lab manual with diagrams and procedures now available.
+                    </div>
+                </div>
+    
+                <div class="update-item">
+                    <div class="update-date">
+                        <i class="fas fa-calendar-alt"></i> February 20, 2025
+                    </div>
+                    <div class="update-content">
+                        <strong>2025 Entrance Exam List:</strong> Updated schedule for all national-level engineering and medical entrance exams.
+                        <a href="./Entranceexams.html" class="action-button">
+                            <i class="fas fa-list"></i> View List
+                        </a>
+                    </div>
+                </div>
+    
+                <div class="update-item">
+                    <div class="update-date">
+                        <i class="fas fa-calendar-alt"></i> March 1, 2025
+                    </div>
+                    <div class="update-content">
+                        <strong>AP Intermediate Papers:</strong> March 2025 question papers now available for download.
+                        <a href="./Papers.html" 
+                           target="_blank" 
+                           class="action-button">
+                           <i class="fas fa-download"></i> click Here
+                        </a>
+                    </div>
+                </div>
+    
+                <div class="update-item">
+                    <div class="update-date">
+                        <i class="fas fa-calendar-alt"></i> February 25, 2025
+                    </div>
+                    <div class="update-content">
+                        <strong>TG EAMCET 2025:</strong> Online applications now open for engineering and agriculture streams.
+                        <a href="https://eapcet.tgche.ac.in/" 
+                           target="_blank" 
+                           class="action-button">
+                           <i class="fas fa-edit"></i> Apply Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+    
+
+        <div class="back-to-home">
+            <a href="./index.html" class="btn btn-primary">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and Dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

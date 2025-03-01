@@ -29,7 +29,6 @@
             text-align: center;
         }
 
-        /* Instagram Button Styles */
         .btn-instagram {
             background: linear-gradient(45deg, #E4405F, #F77737);
             color: white;
@@ -47,7 +46,6 @@
             box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
         }
 
-        /* Copy Link Button Styles */
         .btn-copy {
             background: linear-gradient(45deg, #2196F3, #03A9F4);
             color: white;
@@ -128,7 +126,6 @@
             width: 100%;
         }
 
-        /* Special Entrance Exam Button Styles */
         .btn-entrance-exam {
             background: linear-gradient(45deg, #6a11cb, #2575fc);
             color: white !important;
@@ -164,6 +161,110 @@
 
         .btn-entrance-exam:hover::before {
             left: 100%;
+        }
+
+        .updates-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 9999;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .updates-container {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 600px;
+            position: relative;
+            animation: slideIn 0.5s ease-out;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .updates-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .updates-title {
+            font-size: 24px;
+            color: #2c3e50;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .close-btn {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .close-btn:hover {
+            transform: rotate(90deg);
+        }
+
+        .update-item {
+            padding: 15px;
+            margin: 10px 0;
+            background: #f8f9fa;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+
+        .update-item:hover {
+            transform: translateX(10px);
+            background: #e9ecef;
+        }
+
+        .update-date {
+            background: #3498db;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin-right: 15px;
+            min-width: 80px;
+            text-align: center;
+        }
+
+        .update-content {
+            flex: 1;
+            color: #34495e;
+        }
+
+        .view-all-btn {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .view-all-btn:hover {
+            color: #2980b9;
+            text-decoration: underline;
         }
 
         @media (max-width: 991px) {
@@ -207,6 +308,16 @@
             footer p {
                 font-size: 12px;
             }
+            .updates-container {
+                padding: 15px;
+            }
+            .update-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .update-date {
+                margin-bottom: 10px;
+            }
         }
     </style>
 </head>
@@ -227,9 +338,7 @@
                     <a class="nav-link px-4" href="./important.html">Important Questions</a>
                     <a class="nav-link px-4" href="./Resources.html">Neet & Jee Resources</a>
                     <a class="nav-link px-4" href="./praticals.html">Practical Materials</a>
-                    <!-- Special Entrance Exam Button -->
-                    <a class="nav-link px-4 btn-entrance-exam" href="./Entranceexams.html"> Entrance Exams list 2025 🚀
-                    </a>
+                    <a class="nav-link px-4 btn-entrance-exam" href="./Entranceexams.html"> Entrance Exams list 2025 🚀</a>
                     <a class="nav-link px-4" href="./Termsandconditions.html">Terms and Conditions</a>
                 </div>
             </div>
@@ -242,8 +351,37 @@
         <h2>In this website we are providing Important Questions for Grade 11th & 12th Students.</h2>
     </div>
 
+    <!-- Updates Popup -->
+    <div class="updates-overlay" id="updatesPopup">
+        <div class="updates-container">
+            <div class="updates-header">
+                <h3 class="updates-title">📢 Latest Updates</h3>
+                <button class="close-btn" onclick="closeUpdates()">×</button>
+            </div>
+            <div class="updates-list">
+                <div class="update-item">
+                    <div class="update-date">January 12, 2025</div>
+                    <div class="update-content">Added new NEET important questions for Biology</div>
+                </div>
+                <div class="update-item">
+                    <div class="update-date">January 26, 2025</div>
+                    <div class="update-content">Updated Physics practical materials</div>
+                </div>
+                <div class="update-item">
+                    <div class="update-date">February 20, 2025</div>
+                    <div class="update-content">New entrance exam list for 2025 added</div>
+                </div>
+                <div class="update-item">
+                    <div class="update-date">March 1st , 2025</div>
+                    <div class="update-content">Ap intermediate sanskrit question paper March-2025 added</div>
+                </div>
+            </div>
+            <a href="./updates.html" class="view-all-btn">View All Updates →</a>
+        </div>
+    </div>
+
     <!-- Share Section -->
-    <div class="share-section" style="text-align: center;">
+    <div class="share-section">
         <p style="margin-bottom: 25px; font-size: 22px;">Share these links with your friends:</p>
         <p id="text-to-copy" style="font-size: 18px; color: #666; margin-bottom: 10px;">
             https://shrxvxnxd.github.io/Animuthyalu/website/index.html
@@ -251,9 +389,7 @@
         <button class="btn-copy" onclick="copyToClipboard()">
             <i class="fas fa-copy"></i> Copy Link
         </button>
-        
-        <!-- Instagram Button Adjusted Below Copy Link Button -->
-        <button class="btn btn-instagram" style="margin-top: 10px;" onclick="window.open('https://www.instagram.com/sri_chaitanya_animuthyalu/', '_blank')">
+        <button class="btn btn-instagram" onclick="window.open('https://www.instagram.com/sri_chaitanya_animuthyalu/', '_blank')">
             <i class="fab fa-instagram"></i> Follow Us on Instagram
         </button>
     </div>
@@ -272,7 +408,21 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
     <script>
-        // Copy to Clipboard Functionality
+        // Show updates popup
+        window.onload = function() {
+            setTimeout(() => {
+                document.getElementById('updatesPopup').style.display = 'flex';
+            }, 2000);
+        };
+
+        function closeUpdates() {
+            document.getElementById('updatesPopup').style.display = 'none';
+        }
+
+        document.getElementById('updatesPopup').addEventListener('click', function(e) {
+            if(e.target === this) closeUpdates();
+        });
+
         function copyToClipboard() {
             const text = document.getElementById("text-to-copy").innerText;
             navigator.clipboard.writeText(text).then(() => {
