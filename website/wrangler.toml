@@ -1,0 +1,3 @@
+name = "animuthyalu"
+main = "dist/index.js"
+compatibility_date = "2025-03-02"
