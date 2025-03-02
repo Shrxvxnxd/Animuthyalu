@@ -21,3 +21,6 @@ async function runTask() {
   console.log("Scheduled task running...");
 }
 
+addEventListener("fetch", (event) => {
+  event.respondWith(new Response("Hello, world!", { status: 200 }));
+});

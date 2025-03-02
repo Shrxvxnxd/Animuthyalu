@@ -2,3 +2,4 @@ name = "animuthyalu"
 account_id = "e320f5054753d77a0836ae1da78d1278"
 workers_dev = true
 compatibility_date = "2024-03-02"
+main = "index.js"  # Make sure this matches your script file name
